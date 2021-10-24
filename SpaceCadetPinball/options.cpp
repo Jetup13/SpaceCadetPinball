@@ -84,8 +84,8 @@ void options::init()
 	GetInput("Bottom Table Bump key", Options.Key.BottomTableBump);
 
 	Options.Sounds = get_int("Sounds", true);
-	Options.Music = get_int("Music", false);
-	Options.FullScreen = get_int("FullScreen", false);
+	Options.Music = get_int("Music", true);
+	Options.FullScreen = get_int("FullScreen", true);
 	Options.Players = get_int("Players", 1);
 	Options.UniformScaling = get_int("Uniform scaling", true);
 	ImGui::GetIO().FontGlobalScale = get_float("UI Scale", 1.0f);
@@ -94,7 +94,7 @@ void options::init()
 	Options.FramesPerSecond = std::min(MaxFps, std::max(MinUps, get_int("Frames Per Second", DefFps)));
 	Options.UpdatesPerSecond = std::min(MaxUps, std::max(MinUps, get_int("Updates Per Second", DefUps)));
 	Options.UpdatesPerSecond = std::max(Options.UpdatesPerSecond, Options.FramesPerSecond);
-	Options.ShowMenu = get_int("ShowMenu", true);
+	Options.ShowMenu = get_int("ShowMenu", false);
 	Options.UncappedUpdatesPerSecond = get_int("Uncapped Updates Per Second", false);
 	Options.SoundChannels = get_int("Sound Channels", DefSoundChannels);
 	Options.SoundChannels = std::min(MaxSoundChannels, std::max(MinSoundChannels, Options.SoundChannels));
